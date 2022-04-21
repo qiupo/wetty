@@ -15,8 +15,10 @@ export function address(
   if (!_.isUndefined(headers.referer)) {
     const match = headers.referer.match('.+/ssh/([^/]+)$');
     if (match) {
-      const username = escapeShell(match[1].split('?')[0]);
-      return `${username}@${host}`;
+      const arr = match[1].split('?');
+      const username = escapeShell(arr[0]);
+      const matchHost =arr[1]? arr[1].split('=')[1]: host;
+      return `${username}@${matchHost}`;
     }
   }
   return user ? `${escapeShell(user)}@${host}` : host;
