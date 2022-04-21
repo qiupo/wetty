@@ -66,17 +66,18 @@
         "extensions": [".ts", ".js"]
       }
     }
-  },
-  "overrides": [
-    {
-      "files": ["*.spec.ts"],
-      "extends": ["plugin:mocha/recommended"],
-      "plugins": ["mocha"],
-      "rules": {
-        "import/no-extraneous-dependencies": ["off"],
-        "mocha/no-mocha-arrows": ["off"],
-        "no-unused-expressions": ["off"]
-      }
-    }
-  ]
+  }
+  // ,
+  // "overrides": [
+  //   {
+  //     "files": ["*.spec.ts"],
+  //     "extends": ["plugin:mocha/recommended"],
+  //     "plugins": ["mocha"],
+  //     "rules": {
+  //       "import/no-extraneous-dependencies": ["off"],
+  //       "mocha/no-mocha-arrows": ["off"],
+  //       "no-unused-expressions": ["off"]
+  //     }
+  //   }
+  // ]
 }
