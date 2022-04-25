@@ -9,4 +9,4 @@ const filePath = dirname(
 );
 
 export const assetsPath = (...args: string[]) =>
-  resolve(filePath, 'build', ...args);
+  resolve(filePath, process.env.package||'lib', ...args);

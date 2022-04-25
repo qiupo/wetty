@@ -12,9 +12,11 @@ import { setLevel, logger } from './shared/logger.js';
 import { start } from './server.js';
 import { loadConfigFile, mergeCliConf } from './shared/config.js';
 
-/* eslint-disable @typescript-eslint/no-var-requires */
-const require = createRequire(import.meta.url);
-const packageJson = require('../package.json');
+
+const packageJson =
+  process.env.package === 'lib'
+    ? require('../package.json')
+    : createRequire(import.meta.url)('../package.json');
 
 const opts = yargs
   .scriptName(packageJson.name)

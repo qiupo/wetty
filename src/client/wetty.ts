@@ -11,6 +11,8 @@ import { verifyPrompt } from './shared/verify.js';
 import { terminal } from './wetty/term.js';
 
 // Setup for fontawesome
+// eslint-disable-next-line @typescript-eslint/ban-ts-comment
+// @ts-ignore
 library.add(faCogs);
 dom.watch();
 

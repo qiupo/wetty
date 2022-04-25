@@ -1,5 +1,5 @@
 import type SocketIO from 'socket.io';
-import pty from 'node-pty';
+import {spawn as ptySpawn} from 'node-pty';
 import { dirname, resolve as resolvePath } from 'path';
 import { fileURLToPath } from 'url';
 import { xterm } from './shared/xterm.js';
@@ -13,7 +13,7 @@ const executable = resolvePath(
 export function login(socket: SocketIO.Socket): Promise<string> {
   // Request carries no username information
   // Create terminal and ask user for username
-  const term = pty.spawn('/usr/bin/env', ['node', executable], xterm);
+  const term = ptySpawn('/usr/bin/env', ['node', executable], xterm);
   let buf = '';
   return new Promise((resolve, reject) => {
     term.on('exit', () => {

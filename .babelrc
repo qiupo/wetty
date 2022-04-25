@@ -1,0 +1,5 @@
+{
+  "presets": ["@babel/preset-env"],
+  "plugins": ["babel-plugin-transform-import-meta", "@babel/transform-runtime"],
+  "ignore": ["./build/assets", "./build/client", "./build/web_modules"]
+}
